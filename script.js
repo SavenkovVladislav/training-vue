@@ -1,12 +1,7 @@
 var app1 = new Vue({
 	el: '#app1',
 	data: {
-		message1: 'message1',
-		message2: 'message2',
-	},
-
-	noData: {
-		message: 'This is not data',
+		message: 'message',
 	},
 })
 
