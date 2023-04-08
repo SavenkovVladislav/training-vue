@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<ul id="app1">
+			<li v-for="item in items" v-bind:key="item.id">{{item.message}}</li>
+		</ul>
+
+		<ul id="app2">
+			<li v-for="(item,index) in items" :key="item.id">
+				{{parentMessage}} - {{index}} - {{item.message}}
+			</li>
+		</ul>
+
+		<ul id="app3">
+			<li v-for="(value, name, index) in object">
+				{{index}} {{name}}: {{value}}
+			</li>
+		</ul>
+		<script src="script.js"></script>
+	</body>
+</html>
