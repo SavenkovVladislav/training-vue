@@ -11,6 +11,7 @@ new Vue({
 		},
 	},
 })
+
 // еще один пример
 new Vue({
 	el: '#app2',
@@ -21,6 +22,40 @@ new Vue({
 	computed: {
 		fullName: function () {
 			return this.firstName + ' ' + this.lastName
+		},
+	},
+})
+
+let vm = new Vue({
+	el: '#app3',
+	data: {
+		firstName: 'Иван',
+		lastName: 'Иванов',
+	},
+
+	computed: {
+		fullName: {
+			get: function () {
+				return `${this.firstName} ${this.lastName}`
+			},
+		},
+	},
+})
+
+new Vue({
+	el: '#app4',
+	data: {
+		firstName: '',
+		lastName: '',
+		fullName: '',
+	},
+
+	watch: {
+		fullName: function (newFullName) {
+			let names = newFullName.split(' ')
+
+			this.firstName = names[0] || ''
+			this.lastName = names[names.length - 1] || ''
 		},
 	},
 })
