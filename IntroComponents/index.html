@@ -19,6 +19,18 @@
 			</div>
 		</div>
 
+		<div id="components-demo">
+			<button-counter
+				v-bind:transform="(oldValue)=>{return oldValue**3}"
+			></button-counter>
+			<button-counter
+				v-bind:transform="(oldValue)=>{return oldValue**2}"
+			></button-counter>
+			<button-counter
+				v-bind:transform="(oldValue)=>{return oldValue**4}"
+			></button-counter>
+		</div>
+
 		<script src="script.js"></script>
 	</body>
 </html>

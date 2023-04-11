@@ -22,3 +22,19 @@ new Vue({
 		postFontSize: 1,
 	},
 })
+
+Vue.component('button-counter', {
+	props: ['transform'],
+	data: function () {
+		return {
+			count: 2,
+		}
+	},
+
+	template:
+		'<button v-on:click="count = transform(count)">Счётчик кликов — {{ count }}</button>',
+})
+
+new Vue({
+	el: '#components-demo',
+})
